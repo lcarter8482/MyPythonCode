@@ -1,1 +1,2 @@
-print "Hello"
+name = raw_input()
+print 'Hello', name
