@@ -20,7 +20,6 @@ def countSpeeders(l, maxSpeed):
         if index > maxSpeed:
             count += 1
     return count
-    
 
 def main():
     notRush = readData('data-not-rush.txt')
