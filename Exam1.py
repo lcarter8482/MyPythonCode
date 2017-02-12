@@ -22,16 +22,16 @@ def countSpeeders(l, maxSpeed):
     return count
 
 def main():
-    notRush = readData('data-not-rush.txt')
     rush = readData('data-rush.txt')
-    notRushAvg = getAverage(notRush)
+    notRush = readData('data-not-rush.txt')
     rushAvg = getAverage(rush)
-    notRushSpeeders = countSpeeders(notRush, 69)
+    notRushAvg = getAverage(notRush)
     rushSpeeders = countSpeeders(rush, 69)
+    notRushSpeeders = countSpeeders(notRush, 69)
     
     #calculating speeding fines
-    notRushFine = notRushSpeeders * 100
     rushFine = rushSpeeders * 150
+    notRushFine = notRushSpeeders * 100
    
     print 'The average speed during rush hour was %.2f' % rushAvg
     print 'The average speed not during rush hour was %.2f' % notRushAvg
