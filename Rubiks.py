@@ -26,7 +26,6 @@ def main():
     avgMover = timeCategories(rubiks, 40, 59.99)
     pathetic = timeCategories(rubiks, 60, 2000)
 
-
     print 'Cube Head (0 - 9.99):'
     for i in cubeHead:
         print "        " + i
