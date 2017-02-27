@@ -13,7 +13,7 @@ def rubiksTimes(filename):
 def timeCategories(d, start, stop):
     l = []
     for k in d.keys():
-        if d[k] >= start and d[k] < stop:
+        if d[k] >= start and d[k] <= stop:
             l.append(k)
     return l
 
