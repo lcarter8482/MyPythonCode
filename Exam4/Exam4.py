@@ -1,28 +1,31 @@
+import os
 import Epic
 
-def getFile(filename):
-    file = open(filename)
-    allFile = []
-    for line in file:
-        allFile.append(line)
-    return allFile
+files = os.listdir(".")
+txtFiles = []
 
-def wordSearch(file,userWord):
-    for line in file:
-        if userWord.upper() in line.upper(): 
-            print line.upper().strip()
-    return
-    
 def main():
-    searchWord = Epic.userString('Enter A Search Term: ')
+    userWord = Epic.userString("Enter A Search Word: ")
+    openFiles()
+    counter = search(files, userWord)
+    print "\nWord Found %s times" % counter
 
-    file = getFile('recipes.txt')
-    file1 = getFile('bread.txt')
-    file2 = getFile('firstAid.txt')
-    file3 = getFile('trivia.txt')
-    wordSearch(file,searchWord)
-    wordSearch(file1,searchWord)
-    wordSearch(file2,searchWord)
-    wordSearch(file3,searchWord)
+def openFiles():
+    for file in files:
+        if file.endswith(".txt"):
+            txtFiles.append(file)
+    return
+        
+def search(file, userWord):
+    count = 0
+    for f in txtFiles:
+        allFiles = open(f)
+        data = allFiles.read()
+        data = data.split("\n")
+        for l in data:
+            if userWord.upper() in l.upper():
+                print "%s: %s" % (f, l.upper().strip())
+                count = count + 1
+    return count
 
 main()
