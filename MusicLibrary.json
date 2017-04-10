@@ -1,0 +1,9 @@
+[
+{"Artist" : "Ed Sheeran", "Albums" : ["Divide", "Multiply", "Plus"], "Year" : ["2017", "2014", "2011"]},
+{"Artist" : "Justin Bieber", "Albums" : ["Purpose", "Believe", "My World 2.0"], "Year" : ["2015", "2012", "2010"]},
+{"Artist" : "Kesha", "Albums" : ["Warrior", "Cannibal", "Animal"], "Year" : ["2012", "2010", "2010"]},
+{"Artist" : "Maroon 5", "Albums" : ["V", "Overexposed", "Songs About Jane"], "Year" : ["2014", "2012", "2003"]},
+{"Artist" : "Taylor Swift", "Albums" : ["1989", "Red", "Speak Now", "Fearless"], "Year" : ["2014", "2012", "2010", "2009"]},
+{"Artist" : "Bruno Mars", "Albums" : ["24K Magic", "Unorthodox Jukebox", "Earth To Mars", "Doo-Wops & Hooligans"], "Year" : ["2016", "2012", "2011", "2010"]},
+{"Artist" : "Backstreet Boys", "Albums" : ["Black and Blue", "Millenium", "Backstreet's Back"], "Year" : ["2000", "1999", "1997"]}
+]
