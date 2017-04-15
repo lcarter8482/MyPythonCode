@@ -5,10 +5,10 @@ def main():
     searchType = Epic.userString("Search by category (c) or keyword (k)? ")
     if searchType == "k":
         keyword = Epic.userString("Enter a keyword: ")
-        search(keyword.upper())
+        search(keyword.upper()) #will run search function looking for keyword
     elif searchType == "c":
         category = Epic.userString("Enter a category: ")
-        search(category.upper())
+        search(category.upper()) #will run search function looking for category
 
 #reads in a file & returns String    
 def getJson(filename):
@@ -24,9 +24,9 @@ def getJson(filename):
 def search(supplyType):
     supplies = getJson("PetStore.json") #using the function to read in json file
     for stuff in supplies:
-        if stuff["Category"].upper() == supplyType:
+        if stuff["Category"].upper() == supplyType: #searching through categories for desired supply type
             print "%s - %s" % (stuff["Product"], stuff["Price"])
-        elif supplyType in stuff["Product"].upper():
+        elif supplyType in stuff["Product"].upper(): #searching through product names for keyword entered
             print "%s - %s" % (stuff["Product"], stuff["Price"])
     return
 
