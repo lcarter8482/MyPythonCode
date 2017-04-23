@@ -1,0 +1,33 @@
+import Epic
+import json
+import urllib2
+
+def main():
+    again = "y"
+    while again != "n":
+        city = Epic.userString("\nEnter a city or zip code:")
+        units = Epic.userString("Would you like Fahrenheit (f) or Celsius (c)? ")
+        weather = getJson(city)
+        if units == "f": #runs Fahrenheit sort
+            jsonSortF(weather)
+        elif units == "c": #runs Celsius sort
+            jsonSortC(weather)
+        again = Epic.userString("Would you like to enter another location? (y/n)")
+        
+def getJson(city):
+    url = 'https://api.apixu.com/v1/current.json?key=c0c6b2e272de41a29ea190336172304&q=%s' % city
+    jsonTxt = urllib2.urlopen(url).read()
+    weather = json.loads(jsonTxt)
+    return weather
+    
+def jsonSortF(weather): #prints Fahrenheit output
+    print "Here is the current weather for %s, %s" % (weather['location']['name'], weather['location']['region'])
+    print "%s and %s F" % (weather['current']['condition']['text'], weather['current']['temp_f'])
+    print "It actually feels like %s F" % weather['current']['feelslike_f']
+    
+def jsonSortC(weather): #prints Celsius output
+    print "Here is the current weather for %s, %s" % (weather['location']['name'], weather['location']['region'])
+    print "%s and %s C" % (weather['current']['condition']['text'], weather['current']['temp_c'])
+    print "It actually feels like %s C" % weather['current']['feelslike_c']
+    
+main()
