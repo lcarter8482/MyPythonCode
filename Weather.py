@@ -42,5 +42,3 @@ def jsonSortC(weather): #prints Celsius output
     print "Sunset: %s" % weather['forecast']['forecastday'][0]['astro']['sunset']
     
 main()
-
-#weather['forecast']['forecastday'][0]['day']['maxtemp_f']
